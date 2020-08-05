@@ -1,8 +1,16 @@
 // Listen to the calculate button
 const loanForm = document.querySelector("#loan-form");
-loanForm.addEventListener("submit", calculate);
+loanForm.addEventListener("submit", function (e) {
+  // Hide the results container
+  document.getElementById("results").style.display = "none";
+  // Show the loader
+  document.getElementById("loading").style.display = "block";
 
-function calculate(e) {
+  setTimeout(calculate, 1500);
+  e.preventDefault();
+});
+
+function calculate() {
   // Grab the UI input vars
   const amount = document.querySelector("#amount");
   const interest = document.querySelector("#interest");
@@ -25,11 +33,15 @@ function calculate(e) {
     monthlyPaymeny.value = monthly.toFixed(2);
     totalPaymeny.value = (monthly * calculatedPayments).toFixed(2);
     totalInterest.value = (monthly * calculatedPayments - principal).toFixed(2);
+
+    // Show the results container
+    document.getElementById("results").style.display = "block";
+
+    //Show the loader
+    document.getElementById("loading").style.display = "none";
   } else {
     wrong("Please enter some values");
   }
-
-  e.preventDefault();
 }
 
 // Error message
@@ -45,6 +57,9 @@ function wrong(error) {
 
   // Show the error
   cardContainer.insertBefore(errorDiv, heading);
+
+  // Hide the loader
+  document.getElementById("loading").style.display = "none";
 
   // Clear the error after 3sec.
   setTimeout(clearError, 2500);
