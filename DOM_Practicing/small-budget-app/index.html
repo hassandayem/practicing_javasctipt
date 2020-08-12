@@ -17,12 +17,12 @@
         <div class="col-md-4 col-8 mx-auto">
           <div class="mb-4 text-center">
             <p>Enter Your Daily Budget</p>
-            <form class="expense__form" onsubmit="addExpense">
+            <form class="budget__form" onsubmit="addBudget">
               <input
-                class="expense__input form-control"
-                type="text"
-                name="expense"
-                id="expense"
+                class="budget__input form-control"
+                type="number"
+                name="budget"
+                id="budget"
               />
             </form>
           </div>
@@ -78,8 +78,8 @@
               />
             </svg>
 
-            <div class="expense__form mb-4">
-              <form>
+            <div class="mb-4">
+              <form class="expense__form">
                 <div class="form-group">
                   <label for="amount">Amount</label>
                   <input
@@ -98,7 +98,9 @@
                     id="name-of-expense"
                   />
                 </div>
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="button" class="btn btn-success expense__submit">
+                  Add
+                </button>
               </form>
             </div>
           </div>
