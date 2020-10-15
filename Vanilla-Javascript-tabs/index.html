@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tabs</title>
+  </head>
+  <body>
+    <ul class="tabs">
+      <li class="tab active" data-tab-target="#all">All</li>
+      <li class="tab" data-tab-target="#interior">Interior</li>
+      <li class="tab" data-tab-target="#exterior">Exterior</li>
+    </ul>
+
+    <div class="tabs-content">
+      <div id="all" data-tab-content class="active">
+        <h1>All the images goes here...</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita,
+          minus!
+        </p>
+      </div>
+
+      <div id="interior" data-tab-content>
+        <h1>These are the interior photos</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita,
+          minus!
+        </p>
+      </div>
+      <div id="exterior" data-tab-content>
+        <h1>And those are the exterior ones</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita,
+          minus!
+        </p>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
